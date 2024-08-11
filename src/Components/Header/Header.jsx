@@ -27,11 +27,11 @@ const Header = ( ) => {
              </div>
              <div className="hidden md:block">
                 <div className="ml-4 fkex items-center space-x-4 wt-4">
-                    <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2">
+                  <Link href={/Pages/Home.jsx}>  <a  className="text-white hover:bg-white hover:text-black rounded-lg p-2">
                         Home
-                    </a>
+                    </a> </Link>
                     <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2">
-                        About
+                        Youtube
                     </a>
                     <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2">
                         Discord
@@ -81,7 +81,7 @@ const Header = ( ) => {
                         Home
                     </a>
                     <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2 block">
-                        About
+                        Youtube
                     </a>
                     <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2 block">
                         Discord
