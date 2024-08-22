@@ -6,9 +6,11 @@ export default function Home() {
   return (
     <>
     <div className="bg-black">
-      <Header />
+    <Header />
       <Slider />
-      <Cards />
+    <div className="">
+     < Cards />
+    </div>
      <Footer />
      </div>
     </>
