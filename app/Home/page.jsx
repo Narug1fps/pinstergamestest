@@ -1,7 +1,7 @@
-import Header from "../Components/Header/Header.jsx";
-import Footer from "../Components/Footer/Footer.jsx";
-import Slider from "../Components/Slider/Slider.jsx";
-import Cards from "../Components/Cards/Cards.jsx";
+import Header from "../../Header/Header.jsx";
+import Footer from "../../Footer/Footer.jsx";
+import Slider from "../../Slider/Slider.jsx";
+import Cards from "../../Cards/Cards.jsx";
 export default function Home() {
   return  <>
     <div className="bg-black  red-600 selection:bg-red-600  " >
