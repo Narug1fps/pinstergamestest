@@ -4,20 +4,27 @@ import React from "react";
 import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ArrowLeftIcon,ArrowRightIcon } from '@heroicons/react/24/solid'
+import Image from "next/image";
+import Link from "next/link";
 
 const Slider = () => {
 	//Array of Images
 	const images = [
-		"images/Image1.jpg",
-		"images/Image2.jpg",
-		"images/Image4.jpg",
-		"images/Image5.jpg",
+		
+		"images/Image1.png",
+		"images/Image2.png",
+		"images/Image3.png",
+		"images/Image4.png",
+		"images/Image5.png",
+		"images/Image6.png",
+		"images/Image7.png",
+		"images/Image8.png",
 	];
 
 	//These are custom properties for zoom effect while slide-show
 	const zoomInProperties = {
 		scale: 1,
-		duration: 5000,
+		duration: 3000,
 		transitionDuration: 300,
 		infinite: true,
 		prevArrow: (
@@ -32,16 +39,25 @@ const Slider = () => {
 		),
 	};
 	return (
-		<div className="w-xl h-60 md:h-screen  ">
+		<div className="w-xl h-xl md:h-screen   ">
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
-					<div key={index} className="flex justify-center md:items-center items-start w-screen h-screen relative">
+					<div key={index} className="flex justify-center md:items-center items-start w-screen h-xl md:h-screen relative">
 						<img
 							className="w-screen"
 							src={each}
 						/>
-                        <h1 className="absolute md:top-60 top-24 inset-x-1/4 text-center z-10 md:text-6xl text-4xl bold text-white">Hello World</h1>
-                        <button className="absolute md:top-80 top-40 inset-x-1/4 text-center z-10 md:text-2xl text-xl bold text-white"></button>
+                        <div className="absolute bottom-48 left-2 inset-x-1/4 items-center  z-10 w-full h-full hidden md:block ">
+					  	<Image alt=" " width={1920} height={1080}  src="/Mary Slide.png"/>
+						</div>
+						<div className="absolute left-2 bottom-8 inset-x-1/4 items-center  z-10 w-full h-full md:hidden ">
+					  	<Image alt=" " width={1920} height={1080}  src="/Mary Slide.png"/>
+						</div>
+                        <button className="absolute md:top-80 top-40 inset-x-1/4 text-center z-10 bg-red-600 md:w-48 md:h-12 w-24 h-8 ml-14  md:mb-0 mb-6 md:ml-72 rounded-full md:mt-32 md:text-2xl md:text-xl text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
+						<Link href="/Games" className="hover:text-red-600 duration-300">
+                        See More{""}
+                    </Link>
+						</button>
 					</div>
 				))}
 			</Zoom>
