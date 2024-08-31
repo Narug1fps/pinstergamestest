@@ -11,14 +11,14 @@ const Slider = () => {
 	//Array of Images
 	const images = [
 		
-		"images/Image1.png",
-		"images/Image2.png",
-		"images/Image3.png",
-		"images/Image4.png",
-		"images/Image5.png",
-		"images/Image6.png",
-		"images/Image7.png",
-		"images/Image8.png",
+		"/images/Image1.png",
+		"/images/Image2.png",
+		"/images/Image3.png",
+		"/images/Image4.png",
+		"/images/Image5.png",
+		"/images/Image6.png",
+		"/images/Image7.png",
+		"/images/Image8.png",
 	];
 
 	//These are custom properties for zoom effect while slide-show
