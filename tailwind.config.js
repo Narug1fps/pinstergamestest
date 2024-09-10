@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      cursor: {
+        'my-cursor': 'url(/public/cursor.cur), default',
       },
+      backgroundImage: {
+        'bg-mary': "url('/bg-mary-pc.png')",
+        'mary-md': "url('/mary-md.png')"
+      },
+      borderColor:{
+        'discord': '	#7289da',
+      }
+      
     },
   },
   plugins: [],

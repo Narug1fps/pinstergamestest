@@ -7,7 +7,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-const Slider = () => {
+const SliderMary = () => {
 	//Array of Images
 	const images = [
 		"/images/1.png",
@@ -46,13 +46,21 @@ const Slider = () => {
 						className="flex justify-center md:items-center items-start w-screen h-xl md:h-screen relative"
 					>
 						<img className="w-screen" src={each} />
-						<div className=" absolute flex top-3/4  ">
-							<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-24 h-8   rounded-full  md:text-2xl md:text-xl text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
+						<div className=" absolute flex top-3/4 gap-2 md:gap-10  ">
+							<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-28 h-8   rounded-full  md:text-2xl text-lg text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
 								<Link
-									href="https://youtu.be/lgipOfqR410?si=o6o1GKZ1IyTnV03L"
+									href="https://store.steampowered.com/app/3057080/Mary_Demo/"
 									className="hover:text-red-600 duration-300"
 								>
-									Mary trailer
+									Get Demo{""}
+								</Link>
+							</button>
+							<button className="    text-center z-10 bg-red-600 md:w-48 md:h-12 w-28 h-8   rounded-full  md:text-2xl text-lg text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
+								<Link
+									href="https://store.steampowered.com/news/app/3017570"
+									className="hover:text-red-600 duration-300"
+								>
+									Mary News{""}
 								</Link>
 							</button>
 						</div>
@@ -63,4 +71,4 @@ const Slider = () => {
 	);
 };
 
-export default Slider;
+export default SliderMary;
