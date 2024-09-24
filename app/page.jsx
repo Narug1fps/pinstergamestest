@@ -1,7 +1,8 @@
-import Header from "./Components/Header/Header";
-import Slider from "./Components/Slider/Slider";
-import Cards from "./Components/Cards/Cards";
-import Footer from "./Components/Footer/Footer";
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Slider from './Components/Slider/Slider';
+import Cards from './Components/Cards/Cards';
+
 
 export default function Home() {
 	return (

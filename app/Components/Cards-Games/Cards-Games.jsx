@@ -1,15 +1,19 @@
 "use client";
 import Image from "next/image";
+import {motion} from 'framer-motion'
 
 //" rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60 hover:bg-white hover:text-black"
 export default function CardsGames() {
 	return (
 		<>
 			<main className=" bg-black z-10 p-12 ">
-			<div className="w-full h-1 bg-gradient-to-r from-black via-red-600  via-red-600 via-red-600 to-black"></div>
+			<div className="md:mb-4 w-full h-1 bg-gradient-to-r from-black via-red-600  via-red-600 via-red-600 to-black"></div>
 				<div className=" flex min-h-screen items-center justify-center  ">
 					<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-						<div className="border-2 rounded-2xl group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+					<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            whileInView={{ scale: 1,  opacity: 1.5}}
+            transition={{ ease: "easeInOut", duration: 1.5}}>			<div className="border-2 rounded-2xl group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
 							<div className="h-96 w-72 ">
 								<Image width={288} height={384} src="/Block.png" alt="" />
 							</div>
@@ -26,7 +30,11 @@ export default function CardsGames() {
 								</button>
 							</div>
 						</div>
-						<div className="border-2 rounded-2xl group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+						</motion.div>
+						<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            whileInView={{ scale: 1,  opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 1.5}}>			<div className="border-2 rounded-2xl group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
 							<div className="h-96 w-72">
 								<Image width={288} height={384} src="/Mary card.png" alt="" />
 							</div>
@@ -49,6 +57,11 @@ export default function CardsGames() {
 								</button>
 							</div>
 						</div>
+						</motion.div>
+						<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            whileInView={{ scale: 1,  opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 1.5}}>
 						<div className="border-2 rounded-2xl group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
 							<div className="h-96 w-72">
 								<Image width={288} height={384} src="/Block.png" alt="" />
@@ -66,9 +79,10 @@ export default function CardsGames() {
 								</button>
 							</div>
 						</div>
+						</motion.div>
 					</div>
 				</div>
-				<div className="w-full h-1 bg-gradient-to-r from-black via-red-600  via-red-600 via-red-600 to-black"></div>v
+				<div className="md:mt-4 w-full h-1 bg-gradient-to-r from-black via-red-600  via-red-600 via-red-600 to-black"></div>v
 			</main>
 		</>
 	);

@@ -6,6 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import {motion} from 'framer-motion'
 
 const Slider = () => {
 	//Array of Images
@@ -27,18 +28,26 @@ const Slider = () => {
 		transitionDuration: 300,
 		infinite: true,
 		prevArrow: (
-			<div className="ml-10 top-40 md:top-72">
+			<motion.div
+			initial={{ x:-500, opacity:0 }}
+			animate={{x:0, opacity:1}}
+			transition={{ease: "easeInOut", duration: 2}}
+			className="ml-10 top-40 md:top-72">
 				<ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
-			</div>
+			</motion.div>
 		),
 		nextArrow: (
-			<div className="mr-10 top-40 md:top-72">
+			<motion.div 
+			initial={{ x:500, opacity:0 }}
+			animate={{x:0, opacity:1}}
+			transition={{ease: "easeInOut", duration: 2}}
+			className="mr-10 top-40 md:top-72">
 				<ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />
-			</div>
+			</motion.div>
 		),
 	};
 	return (
-		<div className="w-xl h-xl md:h-screen justify-center items-center   ">
+		<div className="w-xl h-xl md:h-screen justify-center items-center  ">
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
 					<div
@@ -47,7 +56,10 @@ const Slider = () => {
 					>
 						<img className="w-screen" src={each} />
 						<div className=" absolute flex top-3/4  ">
-							<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-24 h-8   rounded-full  md:text-2xl md:text-xl text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
+						<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            animate={{ scale: 1,  opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 2 }}>	<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-24 h-8   rounded-full  md:text-2xl md:text-xl text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
 								<Link
 									href="https://youtu.be/lgipOfqR410?si=o6o1GKZ1IyTnV03L"
 									className="hover:text-red-600 duration-300"
@@ -55,6 +67,7 @@ const Slider = () => {
 									Mary trailer
 								</Link>
 							</button>
+							</motion.div>	
 						</div>
 					</div>
 				))}

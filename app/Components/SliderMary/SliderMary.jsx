@@ -6,6 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import {motion} from 'framer-motion'
 
 const SliderMary = () => {
 	//Array of Images
@@ -27,14 +28,22 @@ const SliderMary = () => {
 		transitionDuration: 300,
 		infinite: true,
 		prevArrow: (
-			<div className="ml-10 top-40 md:top-72">
+			<motion.div
+			initial={{ x:-500, opacity:0 }}
+			animate={{x:0, opacity:1}}
+			transition={{ease: "easeInOut", duration: 2}}
+			className="ml-10 top-40 md:top-72">
 				<ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
-			</div>
+			</motion.div>
 		),
 		nextArrow: (
-			<div className="mr-10 top-40 md:top-72">
+			<motion.div 
+			initial={{ x:500, opacity:0 }}
+			animate={{x:0, opacity:1}}
+			transition={{ease: "easeInOut", duration: 2}}
+			className="mr-10 top-40 md:top-72">
 				<ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />
-			</div>
+			</motion.div>
 		),
 	};
 	return (
@@ -45,9 +54,12 @@ const SliderMary = () => {
 						key={index}
 						className="flex justify-center md:items-center items-start w-screen h-xl md:h-screen relative"
 					>
-						<img className="w-screen" src={each} />
+						<Image className="w-screen" src={each} alt="" width={1920} height={1080}/>
 						<div className=" absolute flex top-3/4 gap-2 md:gap-10  ">
-							<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-28 h-8   rounded-full  md:text-2xl text-lg text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
+						<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            animate={{ scale: 1,  opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 2 }}>							<button className="  text-center z-10 bg-red-600 md:w-48 md:h-12 w-28 h-8   rounded-full  md:text-2xl text-lg text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
 								<Link
 									href="https://store.steampowered.com/app/3057080/Mary_Demo/"
 									className="hover:text-red-600 duration-300"
@@ -55,6 +67,11 @@ const SliderMary = () => {
 									Get Demo{""}
 								</Link>
 							</button>
+							</motion.div>
+							<motion.div
+        		initial={{ scale: 0.1, opacity: 0 }}
+            animate={{ scale: 1,  opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 2 }}>	
 							<button className="    text-center z-10 bg-red-600 md:w-48 md:h-12 w-28 h-8   rounded-full  md:text-2xl text-lg text-md bold text-white hover:bg-white hover:text-red-600 duration-300 ">
 								<Link
 									href="https://store.steampowered.com/news/app/3017570"
@@ -63,6 +80,7 @@ const SliderMary = () => {
 									Mary News{""}
 								</Link>
 							</button>
+							</motion.div>
 						</div>
 					</div>
 				))}
